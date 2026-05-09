@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Mother’s Day!</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(to bottom, #ffd6e7, #fff);
+        overflow:hidden;
+    }
+
+    /* Closed Box */
+    .container{
+        text-align:center;
+    }
+
+    .gift-box{
+        width:220px;
+        height:160px;
+        background:#ff4d88;
+        border-radius:12px;
+        position:relative;
+        cursor:pointer;
+        transition:0.5s;
+        margin:auto;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .gift-box::before{
+        content:"";
+        position:absolute;
+        width:100%;
+        height:30px;
+        background:#ff80aa;
+        top:-25px;
+        left:0;
+        border-radius:12px 12px 0 0;
+        transition:0.5s;
+    }
+
+    .gift-box h2{
+        color:white;
+        line-height:160px;
+        letter-spacing:2px;
+    }
+
+    /* Open Animation */
+    .open .gift-box::before{
+        transform:rotate(-20deg) translateY(-60px);
+    }
+
+    .surprise{
+        opacity:0;
+        transform:translateY(40px);
+        transition:1s;
+        margin-top:30px;
+        max-height:300px;
+        overflow-y:auto;
+        padding:10px;
+    }
+
+    .open .surprise{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    /* Bouquet */
+    .bouquet{
+        position:relative;
+        width:220px;
+        height:220px;
+        margin:auto;
+    }
+
+    .flower{
+        width:70px;
+        height:70px;
+        background:#ff5fa2;
+        border-radius:50%;
+        position:absolute;
+    }
+
+    .flower::before,
+    .flower::after{
+        content:"";
+        position:absolute;
+        width:70px;
+        height:70px;
+        background:#ff5fa2;
+        border-radius:50%;
+    }
+
+    .flower::before{
+        top:-35px;
+        left:0;
+    }
+
+    .flower::after{
+        left:35px;
+        top:0;
+    }
+
+    .center{
+        width:28px;
+        height:28px;
+        background:gold;
+        border-radius:50%;
+        position:absolute;
+        top:22px;
+        left:22px;
+        z-index:2;
+    }
+
+    .f1{ top:20px; left:70px; }
+    .f2{ top:80px; left:20px; }
+    .f3{ top:80px; right:20px; }
+
+    .stem{
+        width:6px;
+        height:120px;
+        background:green;
+        position:absolute;
+        top:120px;
+        left:107px;
+    }
+
+    .message{
+        margin-top:25px;
+        background:white;
+        padding:20px;
+        border-radius:15px;
+        width:300px;
+        margin-left:auto;
+        margin-right:auto;
+        box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        line-height:1.6;
+    }
+
+    .message h3{
+        color:#ff4d88;
+        margin-bottom:10px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+    <!-- Closed Box -->
+    <div class="gift-box" onclick="openBox()">
+        <h2>OPEN</h2>
+    </div>
+
+    <!-- Hidden Surprise -->
+    <div class="surprise">
+
+        <!-- Bouquet -->
+        <div class="bouquet">
+
+            <div class="flower f1">
+                <div class="center"></div>
+            </div>
+
+            <div class="flower f2">
+                <div class="center"></div>
+            </div>
+
+            <div class="flower f3">
+                <div class="center"></div>
+            </div>
+
+            <div class="stem"></div>
+        </div>
+
+        <!-- Scroll Message -->
+        <div class="message">
+            <h3>For You 🌸</h3>
+
+            <p>
+                Happy Mother’s Day po, Tita!! 💙
+            </p>
+
+            <br>
+
+            <p>
+                Thank you po for all the things you’ve done for me. I really appreciate everything, and I’m so grateful for all your love, care, and support. I’m always praying for your good health, happiness, and lots of love not only today, but every day.
+            </p>
+
+            <br>
+
+            <p>
+                I will study hard po so that someday, I can give back and repay all the kindness and sacrifices you’ve done for me. Love you so much po, Tita!! ＼⁠(⁠^⁠o⁠^⁠)⁠／
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function openBox(){
+        document.getElementById("container").classList.toggle("open");
+    }
+</script>
+
+</body>
+</html>
